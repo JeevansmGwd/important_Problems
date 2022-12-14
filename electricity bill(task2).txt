@@ -1,0 +1,54 @@
+#include<stdio.h>
+int main()
+{	
+		int units,months,reference_num,services;
+		char consumer_name,category;
+		float subsidy,bill_amount;
+		while(1)							//for continous calculations
+		{
+			printf("Enter the name of consumer\n");
+			scanf("%s",&consumer_name);				//without '&' getting error in online compilers
+			printf("Enter the bill reference number\n");
+			scanf("%d",&reference_num);
+			printf("Enter the amount of units consumed\n");
+			scanf("%d",&units);
+			/* IF MORE THAN 2 MONTHS ARE THERE THEN =>
+			printf("Enter the number of months\n");
+			scanf("%d",&months);*/ 
+			printf("Enter the number of service\n");
+			scanf("%d",&services);
+			if(units>=0)
+			{
+				if(units<=100)
+				{
+					bill_amount = (2.50*units)+(30*services);
+					printf("BILL AMOUNT : ₹ %10.2f\n",bill_amount);
+					printf("SUBSITY     : NO SUBSIDY\n");
+				}
+				else if(units<200)
+				{ 
+					bill_amount = (2.50*units)+(30*services);	
+					subsidy = (1.50*(units-100))+(20*services);
+					printf("BILL AMOUNT : ₹ %10.2f\n",bill_amount);
+					printf("SUBSIDY     : ₹ %10.2f\n",subsidy);
+				}
+				else if(units<500)
+				{
+					bill_amount = (2.50*200)+(3.00*(units-200))+(40*services);
+					subsidy = (2.00*100)+(3.00*(units-200))+(30*services);
+					printf("BILL AMOUNT : ₹ %10.2f\n",bill_amount);
+					printf("SUBSIDY     : ₹ %10.2f\n",subsidy);
+				}
+				else if(units>500)
+				{
+					bill_amount = (2.50*100)+(3.50*100)+(4.60*300)+(6.60*(units-500))+(50*services);
+					subsidy  = (3.50*100)+(4.60*300)+(6.60*(units-500))+(50*services);
+					printf("BILL AMOUNT : ₹ %10.2f\n",bill_amount);
+					printf("SUBSIDY     : ₹ %10.2f\n",subsidy);
+				}
+			}
+			else
+			printf("No units consumed\n");
+		}
+		return 0;
+}

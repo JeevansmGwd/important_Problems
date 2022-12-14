@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int weight,choice;
+	while(1)
+	{
+	    printf("Weight in grams\n");
+	    scanf("%d",&weight);
+	    if(weight>=0)
+	    {
+            if(weight>=7000)
+            {
+                printf("OVERLOADED\n");
+                exit(0);
+            }
+            if(weight==0)
+            {
+                printf("Time Estimated: 0 minutes\n");
+                exit(0);
+            }
+		    printf("!!WATER LEVEL!!\n");
+		    printf("1.low water level\n");
+		    printf("2.medium water level\n");
+		    printf("3.high water level\n"); 
+		    scanf("%d",&choice);
+		    switch(choice)
+		    {
+			    case 1 : if(weight<=2000)
+				        {
+				            printf("Time Estimated: 25 minutes\n");
+				        }
+				        else
+				        printf("INVALID INPUT\n");
+				        break;
+			    case 2 : if(weight<=4000 && weight>2000)
+				        {
+				            printf("Time Estimated: 35 minutes\n");
+				        }
+				        else
+				        printf("INVALID INPUT\n");
+				        break;
+			    case 3 :if( weight >4000)
+				        {
+				            printf("Time estimated: 45 minutes\n");
+				        }
+				        else
+				        printf("INVALID INPUT\n");
+				        break;
+			    default:printf("INVALID INPUT\n");
+		    }
+	    }
+	    else
+	    printf("INVALID INPUT\n");
+	};
+}

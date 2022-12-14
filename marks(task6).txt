@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+	while(1)
+	{
+		int maths,phy,chem,total,mathphy;
+		printf("Enter the marks scored in maths\n");
+		scanf("%d",&maths);
+		printf("Enter the marks scored in Physics\n");
+		scanf("%d",&phy);
+		printf("Enter the marks scored in Chemistry\n");
+		scanf("%d",&chem);
+		total = maths+phy+chem;
+		mathphy = maths+phy;
+		if(maths<=100 && maths>=0 && phy>=0 &&phy<=100 && chem>=0 &&chem<=100)
+		{
+			if(maths>=65 && phy>=55 && chem>=50)
+			{
+				if(total >=190 || mathphy >= 140)
+				printf("The candidate is eligible for admission\n");
+			}
+			else
+			printf("The candidate is not eligible for admission\n");
+		}
+		else
+		printf("Invalid Input\n");
+	};
+}

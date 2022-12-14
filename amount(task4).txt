@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	int N[],i,price=1,n=4;
+	printf("Scan the item\n");
+	for(i=0;i<=4;i++)
+	{
+		scanf("%d",&N[i]);
+	}
+	printf("Net amount :\n");
+	for(i=0;i<n;i++)
+	{	
+		price = *N[i];
+	}
+	scanf("%d",price);
+}
