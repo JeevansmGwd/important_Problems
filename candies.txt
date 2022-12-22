@@ -1,0 +1,47 @@
+#include<stdio.h>
+int main()
+{
+	int N = 10,K,M;
+	printf("Enter the number of candies sold:\n");
+	scanf("%d",&K);
+	for(K=0;K<=10;)
+	{
+		if(K==0)
+		printf("INVALID INPUT NUMBER OF CANDIES LEFT : 10\n");
+		M = N-K;
+		else if(M<N)
+		{
+			printf("NUMBER OF CANDIES SOLD : %d",K);
+			printf("NUMBER OF CANDIES AVAILABLE : %d",M);
+		}
+	}
+}
+
+
+#include<stdio.h>
+int main()
+{
+	int N = 10,K,M;
+	printf("Enter the number of candies sold:\n");
+	scanf("%d",&K);
+	M = N-K;
+	if(K==0||K<=10)
+	{
+		if(K==0)
+		printf("INVALID INPUT NUMBER OF CANDIES LEFT : 10\n");
+		else if(M<N)
+		{
+			printf("NUMBER OF CANDIES SOLD : %d\n",K);
+			printf("NUMBER OF CANDIES AVAILABLE : %d\n",M);
+		}
+		else
+		printf("Invalid Input\n");
+	}
+	else
+	printf("Invalid input\n");
+	for(K=10;K<=5;N++)
+	{
+	   N = N+1;
+	}
+	printf("NUMBER OF  CANDIES IN JAR:%d",N);
+}
