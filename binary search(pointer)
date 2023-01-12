@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[]={10,11,16,20,23,29},search_element;
+    int size = sizeof(arr)/sizeof(arr[0]);
+    //getting search search_element
+    printf("Search element: ");
+    scanf("%d",&search_element);
+    for(int lb=0,ub=size-1;lb<=ub;){
+        int mid = (lb+ub)/2;
+        if(arr[mid]==search_element){
+            printf("FOund @ %d",mid);
+            return 0;
+        }
+        //if middle element is greater than search element
+        else if(arr[mid]>search_element){
+        ub=mid-1;
+        }
+        else
+        lb = mid+1;
+    }
+    printf("Not found\n");
+    return 0;
+}
