@@ -1,0 +1,30 @@
+//program to implement binary search using recursion
+#include<stdio.h>
+#include<string.h>
+int binarySearch(char **names,int lb,int ub,char str[]){
+    if(lb>ub)
+        return -1;
+    int middle=(lb+ub)/2;
+    int result=strcmp(names[middle],str);
+    if(!result){
+        return middle;
+    }
+    else if(result>0)
+        ub=middle-1;
+    else
+        lb=middle+1;
+    binarySearch(names,lb,ub,str);
+}
+int main(){
+        char *names[20]={"hh1","hh2","hh3","hh4"};
+        char searchName[]="hh1";
+        int index;
+        index=binarySearch(names,0,3,searchName);
+        if(index!=-1){
+            printf("%s found @ %d",searchName,index+1);
+        }
+        else{
+            printf("%s not found");
+        }
+        return 0;
+}
