@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    FILE *fptr;
+    char filename[30],ch;
+    printf("Enter file name: ");
+    scanf("%s", filename);
+    
+    fptr=fopen(filename, "w");
+    
+    if(fptr == NULL){
+        printf("%s cannot be created !",filename);
+        return 0;
+    }
+    
+    printf("Enter text here ... Press 'Q' to quit\n");
+    while((ch=getc(stdin))!='Q')
+    
+        fputc(ch,fptr);
+        printf("%s is saved!",filename);
+        fclose(fptr);
+        
+    return 0;
+}
