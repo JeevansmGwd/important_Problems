@@ -1,0 +1,38 @@
+#include <stdio.h>
+typedef struct student {
+    int rollno;
+    char name[30];
+    double cgpa;
+}student;
+
+student getStudent(){
+    student s;
+    printf("ROll Number : ");
+    scanf("%d",&s.rollno);
+    printf("Student Name: ");
+    scanf("%s",s.name);
+    printf("CGPA        : ");
+    scanf("%lf",&s.cgpa);
+    return s;
+}
+int main(){
+    FILE *fptr;
+    student s;
+    char filename[30];
+    printf("Enter file name: ");
+    scanf("%s",filename);
+    fptr=fopen(filename,"a");
+    if(fptr==NULL){
+        printf("%s cannot be created!",filename);
+        return 0;
+    }
+
+    s=getStudent();
+    int n=fwrite(&s,sizeof(s),1,fptr);
+    if(n==1)
+        printf("Student added!");
+    else
+        printf("Error!");
+    fclose(fptr);
+    return 0;
+}
